@@ -1,0 +1,63 @@
+{
+    "name": "my-vue3-template",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vue-tsc && vite build",
+        "build:test": "vue-tsc --noEmit && vite build --mode test",
+        "preview": "vite preview",
+        "lint:prettier": "prettier --write \"src/**/*.{js,ts,json,jsx,tsx,css,less,scss,vue,html,md,svg}\" --ignore-unknown",
+        "lint:eslint": "eslint --fix --ext .js,.jsx,.ts,.tsx,.vue ./src",
+        "lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
+        "lint:lint-staged": "lint-staged",
+        "prepare": "husky install",
+        "commit": "czg"
+    },
+    "dependencies": {
+        "@element-plus/icons-vue": "^2.1.0",
+        "element-plus": "^2.3.14",
+        "nprogress": "^0.2.0",
+        "pinia": "^2.1.6",
+        "pinia-plugin-persistedstate": "^3.2.0",
+        "vite-plugin-svg-icons": "^2.0.1",
+        "vue": "^3.3.4",
+        "vue-router": "^4.2.4"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^17.7.1",
+        "@commitlint/config-conventional": "^17.7.0",
+        "@types/node": "^20.6.3",
+        "@typescript-eslint/eslint-plugin": "^6.7.2",
+        "@typescript-eslint/parser": "^6.7.2",
+        "@vitejs/plugin-vue": "^4.2.3",
+        "czg": "^1.7.1",
+        "eslint": "^8.49.0",
+        "eslint-config-prettier": "^9.0.0",
+        "eslint-plugin-prettier": "^5.0.0",
+        "eslint-plugin-vue": "^9.17.0",
+        "husky": "^8.0.0",
+        "lint-staged": "^14.0.1",
+        "postcss": "^8.4.31",
+        "postcss-html": "^1.5.0",
+        "prettier": "^3.0.3",
+        "sass": "^1.68.0",
+        "stylelint": "^15.11.0",
+        "stylelint-config-html": "^1.1.0",
+        "stylelint-config-recess-order": "^4.3.0",
+        "stylelint-config-recommended-scss": "^13.1.0",
+        "stylelint-config-recommended-vue": "^1.5.0",
+        "stylelint-config-standard": "^34.0.0",
+        "stylelint-config-standard-scss": "^11.1.0",
+        "typescript": "^5.0.2",
+        "unplugin-auto-import": "^0.16.6",
+        "unplugin-vue-components": "^0.25.2",
+        "vite": "^4.4.5",
+        "vite-plugin-inspect": "^0.7.40",
+        "vue-tsc": "^1.8.5"
+    },
+    "engines": {
+        "node": ">=16.0.0"
+    }
+}

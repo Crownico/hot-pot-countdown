@@ -1,0 +1,84 @@
+@use "sass:map";
+@use "sass:list";
+
+/*************** start ****************/
+
+/* 媒体查询工具 */
+
+/***********************************   */
+$breakpoints: (
+    phone: (
+        320px,
+        480px
+    ),
+    pad: (
+        481px,
+        768px
+    ),
+    notebook: (
+        769px,
+        1024px
+    ),
+    desktop: (
+        1025px,
+        1280px
+    ),
+    tv: 1281px
+);
+
+@mixin respond-to($breakname) {
+    /* 1. 读取断点对象属性值 */
+    $bp: map.get($breakpoints, $breakname);
+
+    /* 2. 类型判断是否为数组 */
+    @if type-of($bp) == "list" {
+        /* 3. 取出数组中的数据 */
+        $min: list.nth($bp, 1);
+        $max: list.nth($bp, 2);
+
+        @media screen and (min-width: $min) and (max-width: $max) {
+            @content;
+        }
+
+        /* 4. tv 大屏 */
+    } @else if type-of($bp) == "number" {
+        @media screen and (min-width: $bp) {
+            @content;
+        }
+    } @else {
+        @warn "`$breakname` is not a valid breakpoint name.";
+    }
+}
+
+// 使用示例
+// .header {
+//     width: 100%;
+//     height: 100vh;
+//     @include respond-to(phone) {
+//         height: 100px;
+//     }
+//     @include respond-to(tv) {
+//         height: 200px;
+//     }
+//     background-color: rgb(139 133 133);
+// }
+
+/*************** start ****************/
+
+/* flex 混合函数, 默认居中 */
+
+/***********************************   */
+
+@mixin flex-center($jus_c: center, $ali_i: center) {
+    display: flex;
+    align-items: $ali_i;
+    justify-content: $jus_c;
+}
+
+/* 使用混合函数 */
+//   .header {
+//       width: 100%;
+//       @include flexCenter(space-between, flex-end);
+//   }
+
+/***************  end  ****************/
