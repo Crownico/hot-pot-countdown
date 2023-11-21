@@ -560,7 +560,7 @@ export const lngredients: Ingredient[] = [
     {
         id: 79,
         name: "粉丝",
-        cooking_time: 5,
+        cooking_time: 300,
         category: "noodle",
         description: "口感爽滑，富含碳水化合物。"
     }
