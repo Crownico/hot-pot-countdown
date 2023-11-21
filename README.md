@@ -13,11 +13,11 @@ vue3 + typescript + vite + element-plus
 3. 重置食材数据
 
 ### 截图
-
-<img src="./doc/images/home.jpeg" width="200"  />
-<img src="./doc/images/select_food.jpeg" width="200" />
-<img src="./doc/images/countdown.jpeg" width="200"  />
-
+<p float="left">
+    <img src="./doc/images/home.jpeg" width="200"  />
+    <img src="./doc/images/select_food.jpeg" width="200" />
+    <img src="./doc/images/countdown.jpeg" width="200"  />
+</p>
 ### 安装与使用
 
 - **Install：**
