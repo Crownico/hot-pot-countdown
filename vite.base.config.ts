@@ -12,6 +12,7 @@ import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 console.log(path.resolve(process.cwd(), "./src/assets/icons"));
 export default defineConfig(({ command }) => {
     return {
+        base: "./",
         resolve: {
             alias: {
                 "@": fileURLToPath(new URL("./src", import.meta.url))
