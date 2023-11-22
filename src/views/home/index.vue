@@ -47,7 +47,9 @@ $btn-bg-color: #f7f7f7;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -60%);
+
         /* transition: all 0.5s; */
+
         /* animation: fade-out 1s ease;
 
         @keyframes fade-out {
@@ -73,6 +75,7 @@ $btn-bg-color: #f7f7f7;
     background-color: $btn-bg-color;
     border: 1px solid #efefef;
     border-radius: 10px;
+
     /* box-shadow:
         2.8px 2.8px 2.2px rgb(0 0 0 / 2%),
         6.7px 6.7px 5.3px rgb(0 0 0 / 2.8%),
@@ -82,7 +85,6 @@ $btn-bg-color: #f7f7f7;
         2.8px 2.8px 2.2px rgb(0 0 0 / 2%),
         6.7px 6.7px 5.3px rgb(0 0 0 / 2.8%);
     transform: translate(50%, 0);
-
     .btn-icon {
         color: #7c7c7c;
         text-shadow: 0 4px 10px rgb(0 0 0 / 30%);

@@ -43,7 +43,7 @@ ElNotification({
 .hotpot-notification-img {
     width: 10vw;
     margin-right: 10px;
-    border-radius: 10px;
     overflow: hidden;
+    border-radius: 10px;
 }
 </style>
