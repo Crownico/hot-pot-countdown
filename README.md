@@ -18,6 +18,7 @@ vue3 + typescript + vite + element-plus
     <img src="./doc/images/select_food.jpeg" width="200" />
     <img src="./doc/images/countdown.jpeg" width="200"  />
 </p>
+
 ### 安装与使用
 
 - **install：**
