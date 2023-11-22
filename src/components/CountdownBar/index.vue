@@ -73,26 +73,27 @@ function handleCountdownControl() {
 
 <style scoped lang="scss">
 $border-radius: 10px;
-
 .hotpot-countdown-bar {
     position: relative;
     width: 90vw;
     margin: 20px auto;
     color: #3d3d3d;
-
     &:active {
         background-color: #f5f5f5;
     }
-
     &::before {
-        content: "";
         position: absolute;
-        height: 100%;
-        width: v-bind(curCountdownPercent);
         z-index: 0;
+        width: v-bind(curCountdownPercent);
+        height: 100%;
+        content: "";
+
         /* background-color: rgb(111, 240, 143); */
+
         /* background-color: #e9ccd3; */
+
         /* background-color: #63bbdd; */
+
         /* background-color: #eeaa9c; */
         background-color: #ed5126;
         border-radius: $border-radius;
@@ -110,29 +111,31 @@ $border-radius: 10px;
         font-weight: 700;
         text-shadow: 0 4px 10px rgb(0 0 0 / 30%);
         border-radius: $border-radius;
+
         /* border: 1px solid #cdcdcd; */
 
         /* box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); */
         box-shadow:
-            0.7px 0.8px 2.2px rgba(0, 0, 0, 0.02),
-            1.7px 2px 5.3px rgba(0, 0, 0, 0.028),
-            3.1px 3.8px 10px rgba(0, 0, 0, 0.035),
-            5.6px 6.7px 17.9px rgba(0, 0, 0, 0.042),
-            10.4px 12.5px 33.4px rgba(0, 0, 0, 0.05),
-            25px 30px 80px rgba(0, 0, 0, 0.07);
+            0.7px 0.8px 2.2px rgb(0 0 0 / 2%),
+            1.7px 2px 5.3px rgb(0 0 0 / 2.8%),
+            3.1px 3.8px 10px rgb(0 0 0 / 3.5%),
+            5.6px 6.7px 17.9px rgb(0 0 0 / 4.2%),
+            10.4px 12.5px 33.4px rgb(0 0 0 / 5%),
+            25px 30px 80px rgb(0 0 0 / 7%);
         .countdown-controller {
             @include flex-center;
+
+            text-shadow: 0 4px 10px rgb(0 0 0 / 30%);
             cursor: pointer;
             fill: #3d3d3d;
-            text-shadow: 0 4px 10px rgb(0 0 0 / 30%);
 
             /* 浏览器默认主题媒体查询 */
             @media (prefers-color-scheme: light) {
             }
+
             @media (prefers-color-scheme: dark) {
                 /* fill: #ffffff; */
             }
-
             .controller-icon--start {
             }
             .controller-icon--reset {

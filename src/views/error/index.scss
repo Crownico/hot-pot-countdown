@@ -4,7 +4,6 @@
     justify-content: center;
     width: 100%;
     height: 100%;
-    
     .not-img {
         margin-right: 120px;
     }
@@ -31,7 +30,7 @@
         }
     }
 
-    @media screen and (min-width: 320px) and (max-width: 768px) {
+    @media screen and (width >= 320px) and (width <= 768px) {
         flex-flow: column;
         .not-img {
             width: 60vw;

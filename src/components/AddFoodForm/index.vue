@@ -92,11 +92,12 @@ const onSubmit = (formEl: FormInstance | undefined) => {
     .form-btns {
         width: 100%;
         margin: 10px 0;
+
         @include flex-center(space-around);
     }
     .explanation-text {
         font-size: 12px;
-        color: #999;
+        color: #999999;
     }
 }
 </style>

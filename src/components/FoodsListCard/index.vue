@@ -52,6 +52,7 @@ function selectedFood(food: Ingredient) {
     margin-bottom: 15px;
     .card-header {
         @include flex-center(space-between);
+
         padding: 10px 0;
 
         /* font-size: 18px; */
@@ -82,9 +83,6 @@ function selectedFood(food: Ingredient) {
                 white-space: nowrap;
                 vertical-align: middle;
                 cursor: pointer;
-                user-select: none;
-                user-select: none;
-                user-select: none;
                 user-select: none;
                 background-color: #ffffff;
                 border: 1px solid #dcdfe6;
