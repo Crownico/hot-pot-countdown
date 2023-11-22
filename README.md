@@ -20,22 +20,24 @@ vue3 + typescript + vite + element-plus
 </p>
 ### 安装与使用
 
-- **Install：**
+- **install：**
 
-```text
+```bash
 pnpm install
 ```
 
-- **Run：**
+- **run：**
 
-```text
+```bash
 pnpm dev
 ```
 
-- **Build：**
+- **docker deploy：**
 
-```text
+```bash
 pnpm build
+
+docker compose up -d
 ```
 
 ## 许可证

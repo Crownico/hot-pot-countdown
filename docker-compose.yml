@@ -3,12 +3,12 @@ version: "3.8"
 services:
     nginx:
         image: nginx
-        container_name: vue3-template
+        container_name: hot-pot-countdown
         ports:
             - "80:18080"
         volumes:
-            - "./nginx/nginx.conf:/etc/nginx/nginx.conf"
-            - "./nginx/dist:/etc/nginx/html"
+            - "./nginx.conf:/etc/nginx/nginx.conf"
+            - "./dist:/etc/nginx/html"
 #         depends_on:
 #             - xxxx
 #         networks:
