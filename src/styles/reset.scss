@@ -140,3 +140,9 @@ body,
 :-webkit-any(article, aside, nav, section) h1 {
     font-size: 2em;
 }
+
+/* css消除点击或长按后的蓝色背景框 */
+html,
+body {
+    -webkit-tap-highlight-color: rgb(0 0 0 / 0%);
+}

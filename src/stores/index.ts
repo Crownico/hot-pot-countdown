@@ -50,8 +50,10 @@ export const useFoodsStore = defineStore({
         resetAllfoods() {
             localStorage.removeItem("userFoodsDB");
             window.location.reload();
-            // this.allfoods = lngredients;
-            // this.selectedFoods = [];
+        },
+        // 应用用户导入的数据
+        applyImportedFoods(importedFoods: Ingredient[]) {
+            this.allfoods = importedFoods;
         }
     },
     persist: piniaPersistConfig("userFoodsDB", ["allfoods"])

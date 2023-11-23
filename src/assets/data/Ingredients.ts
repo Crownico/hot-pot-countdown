@@ -1,13 +1,22 @@
-export type IngredientCategory = "meat" | "fish" | "vegetable" | "mushroom" | "beans" | "innards" | "noodle";
+export type IngredientCategory =
+    | "meat"
+    | "fish"
+    | "meatballs"
+    | "vegetable"
+    | "mushroom"
+    | "beans"
+    | "innards"
+    | "noodle";
 
 export const ingredientCategory: Record<IngredientCategory, string> = {
     meat: "肉类",
-    fish: "海河鲜",
+    fish: "海河鲜类",
+    meatballs: "丸滑类",
     vegetable: "蔬菜",
     mushroom: "菌菇",
     beans: "豆制品",
     innards: "肉杂",
-    noodle: "粉面"
+    noodle: "粉面制品"
 };
 
 export interface Ingredient {
@@ -17,6 +26,7 @@ export interface Ingredient {
     category: IngredientCategory;
     description: string;
 }
+
 export const lngredients: Ingredient[] = [
     {
         id: 22,
@@ -41,8 +51,8 @@ export const lngredients: Ingredient[] = [
     },
     {
         id: 25,
-        name: "现切牛肉",
-        cooking_time: 180,
+        name: "鲜切牛肉",
+        cooking_time: 100,
         category: "meat",
         description: "口感鲜嫩，富含蛋白质"
     },
@@ -63,8 +73,8 @@ export const lngredients: Ingredient[] = [
     {
         id: 28,
         name: "撒尿牛丸",
-        cooking_time: 180,
-        category: "meat",
+        cooking_time: 240,
+        category: "meatballs",
         description: "口感鲜嫩，富含蛋白质"
     },
     {
@@ -217,7 +227,7 @@ export const lngredients: Ingredient[] = [
     {
         id: 50,
         name: "鹌鹑蛋",
-        cooking_time: 60,
+        cooking_time: 100,
         category: "innards",
         description: "口感鲜嫩，富含蛋白质"
     },
@@ -266,7 +276,7 @@ export const lngredients: Ingredient[] = [
     {
         id: 4,
         name: "鱿鱼须",
-        cooking_time: 120,
+        cooking_time: 300,
         category: "fish",
         description: "口感鲜嫩，富含脂肪和蛋白质。"
     },
@@ -280,7 +290,7 @@ export const lngredients: Ingredient[] = [
     {
         id: 6,
         name: "泥鳅",
-        cooking_time: 120,
+        cooking_time: 300,
         category: "fish",
         description: "口感鲜嫩，富含脂肪和蛋白质。"
     },
@@ -301,7 +311,7 @@ export const lngredients: Ingredient[] = [
     {
         id: 9,
         name: "鳝鱼",
-        cooking_time: 180,
+        cooking_time: 300,
         category: "fish",
         description: "口感鲜嫩，富含脂肪和蛋白质。"
     },
@@ -378,15 +388,15 @@ export const lngredients: Ingredient[] = [
     {
         id: 20,
         name: "虾丸",
-        cooking_time: 120,
-        category: "fish",
+        cooking_time: 240,
+        category: "meatballs",
         description: "口感鲜嫩，富含脂肪和蛋白质。"
     },
     {
         id: 21,
         name: "虾滑",
         cooking_time: 180,
-        category: "fish",
+        category: "meatballs",
         description: "口感鲜嫩，富含脂肪和蛋白质。"
     },
     {
@@ -563,5 +573,467 @@ export const lngredients: Ingredient[] = [
         cooking_time: 300,
         category: "noodle",
         description: "口感爽滑，富含碳水化合物。"
+    },
+    {
+        id: 80,
+        name: "莴笋",
+        cooking_time: 60,
+        category: "vegetable",
+        description: "好吃"
+    },
+    {
+        id: 81,
+        name: "油麦菜",
+        cooking_time: 60,
+        category: "vegetable",
+        description: "好吃"
+    },
+    {
+        id: 82,
+        name: "韭菜",
+        cooking_time: 60,
+        category: "vegetable",
+        description: "好吃"
+    },
+    {
+        id: 83,
+        name: "蒜苗",
+        cooking_time: 120,
+        category: "vegetable",
+        description: "好吃"
+    },
+    {
+        id: 84,
+        name: "白菜",
+        cooking_time: 120,
+        category: "vegetable",
+        description: "好吃"
+    },
+    {
+        id: 85,
+        name: "芝麻菜",
+        cooking_time: 120,
+        category: "vegetable",
+        description: "好吃"
+    },
+    {
+        id: 86,
+        name: "红薯苗",
+        cooking_time: 120,
+        category: "vegetable",
+        description: "好吃"
+    },
+    {
+        id: 87,
+        name: "花菜",
+        cooking_time: 180,
+        category: "vegetable",
+        description: "好吃"
+    },
+    {
+        id: 88,
+        name: "丝瓜",
+        cooking_time: 180,
+        category: "vegetable",
+        description: "好吃"
+    },
+    {
+        id: 89,
+        name: "海白菜",
+        cooking_time: 180,
+        category: "vegetable",
+        description: "好吃"
+    },
+    {
+        id: 90,
+        name: "胡萝卜",
+        cooking_time: 180,
+        category: "vegetable",
+        description: "好吃"
+    },
+    {
+        id: 91,
+        name: "红薯",
+        cooking_time: 180,
+        category: "vegetable",
+        description: "好吃"
+    },
+    {
+        id: 92,
+        name: "竹笋",
+        cooking_time: 180,
+        category: "vegetable",
+        description: "好吃"
+    },
+    {
+        id: 93,
+        name: "牛肉滑",
+        cooking_time: 180,
+        category: "meatballs",
+        description: "好吃"
+    },
+    {
+        id: 94,
+        name: "墨鱼滑",
+        cooking_time: 180,
+        category: "meatballs",
+        description: "好吃"
+    },
+    {
+        id: 95,
+        name: "蟹黄鱼滑",
+        cooking_time: 180,
+        category: "meatballs",
+        description: "好吃"
+    },
+    {
+        id: 96,
+        name: "包心丸",
+        cooking_time: 240,
+        category: "meatballs",
+        description: "好吃"
+    },
+    {
+        id: 97,
+        name: "猪肉丸",
+        cooking_time: 240,
+        category: "meatballs",
+        description: "好吃"
+    },
+    {
+        id: 98,
+        name: "四喜丸",
+        cooking_time: 240,
+        category: "meatballs",
+        description: "好吃"
+    },
+    {
+        id: 99,
+        name: "香菜丸",
+        cooking_time: 240,
+        category: "meatballs",
+        description: "好吃"
+    },
+    {
+        id: 100,
+        name: "墨鱼丸",
+        cooking_time: 240,
+        category: "meatballs",
+        description: "好吃"
+    },
+    {
+        id: 101,
+        name: "潮州牛肉丸",
+        cooking_time: 240,
+        category: "meatballs",
+        description: "好吃"
+    },
+    {
+        id: 102,
+        name: "香菇贡丸",
+        cooking_time: 240,
+        category: "meatballs",
+        description: "好吃"
+    },
+    {
+        id: 103,
+        name: "鱼丸",
+        cooking_time: 240,
+        category: "meatballs",
+        description: "好吃"
+    },
+    {
+        id: 104,
+        name: "吊龙",
+        cooking_time: 15,
+        category: "meat",
+        description: "好吃"
+    },
+    {
+        id: 105,
+        name: "羊肉卷",
+        cooking_time: 30,
+        category: "meat",
+        description: "好吃"
+    },
+    {
+        id: 106,
+        name: "牛肉卷",
+        cooking_time: 30,
+        category: "meat",
+        description: "好吃"
+    },
+    {
+        id: 107,
+        name: "鲜切羊肉",
+        cooking_time: 100,
+        category: "meat",
+        description: "好吃"
+    },
+    {
+        id: 108,
+        name: "牛舌",
+        cooking_time: 45,
+        category: "innards",
+        description: "好吃"
+    },
+    {
+        id: 109,
+        name: "牛腩片",
+        cooking_time: 45,
+        category: "meat",
+        description: "好吃"
+    },
+    {
+        id: 110,
+        name: "牛腱肉",
+        cooking_time: 180,
+        category: "meat",
+        description: "好吃"
+    },
+    {
+        id: 111,
+        name: "腊肉",
+        cooking_time: 180,
+        category: "meat",
+        description: "好吃"
+    },
+    {
+        id: 112,
+        name: "鸭胗",
+        cooking_time: 180,
+        category: "innards",
+        description: "好吃"
+    },
+    {
+        id: 113,
+        name: "鸡胗",
+        cooking_time: 180,
+        category: "innards",
+        description: "好吃"
+    },
+    {
+        id: 114,
+        name: "生蚝",
+        cooking_time: 60,
+        category: "fish",
+        description: "好吃"
+    },
+    {
+        id: 115,
+        name: "蟹",
+        cooking_time: 240,
+        category: "fish",
+        description: "好吃"
+    },
+    {
+        id: 116,
+        name: "扇贝",
+        cooking_time: 240,
+        category: "fish",
+        description: "好吃"
+    },
+    {
+        id: 117,
+        name: "青贝",
+        cooking_time: 240,
+        category: "fish",
+        description: "好吃"
+    },
+    {
+        id: 118,
+        name: "带子",
+        cooking_time: 240,
+        category: "fish",
+        description: "好吃"
+    },
+    {
+        id: 119,
+        name: "鱼肚",
+        cooking_time: 240,
+        category: "fish",
+        description: "好吃"
+    },
+    {
+        id: 120,
+        name: "花蛤",
+        cooking_time: 240,
+        category: "fish",
+        description: "好吃"
+    },
+    {
+        id: 121,
+        name: "冻虾",
+        cooking_time: 240,
+        category: "fish",
+        description: "好吃"
+    },
+    {
+        id: 122,
+        name: "牛蛙",
+        cooking_time: 300,
+        category: "fish",
+        description: "好吃"
+    },
+    {
+        id: 123,
+        name: "面筋泡",
+        cooking_time: 30,
+        category: "beans",
+        description: "好吃"
+    },
+    {
+        id: 124,
+        name: "油豆腐皮",
+        cooking_time: 30,
+        category: "beans",
+        description: "好吃"
+    },
+    {
+        id: 125,
+        name: "老油条",
+        cooking_time: 120,
+        category: "noodle",
+        description: "好吃"
+    },
+    {
+        id: 126,
+        name: "千叶豆腐",
+        cooking_time: 120,
+        category: "beans",
+        description: "好吃"
+    },
+    {
+        id: 127,
+        name: "豆腐皮",
+        cooking_time: 120,
+        category: "beans",
+        description: "好吃"
+    },
+    {
+        id: 128,
+        name: "油炸腐竹",
+        cooking_time: 120,
+        category: "beans",
+        description: "好吃"
+    },
+    {
+        id: 129,
+        name: "水晶粉丝",
+        cooking_time: 120,
+        category: "noodle",
+        description: "好吃"
+    },
+    {
+        id: 130,
+        name: "土豆粉",
+        cooking_time: 120,
+        category: "noodle",
+        description: "好吃"
+    },
+    {
+        id: 131,
+        name: "苕皮",
+        cooking_time: 180,
+        category: "noodle",
+        description: "好吃"
+    },
+    {
+        id: 132,
+        name: "魔芋",
+        cooking_time: 180,
+        category: "noodle",
+        description: "好吃"
+    },
+    {
+        id: 133,
+        name: "魔芋丝",
+        cooking_time: 180,
+        category: "noodle",
+        description: "好吃"
+    },
+    {
+        id: 134,
+        name: "龙须面",
+        cooking_time: 300,
+        category: "noodle",
+        description: "好吃"
+    },
+    {
+        id: 135,
+        name: "年糕",
+        cooking_time: 300,
+        category: "noodle",
+        description: "好吃"
+    },
+    {
+        id: 136,
+        name: "手工面",
+        cooking_time: 300,
+        category: "noodle",
+        description: "好吃"
+    },
+    {
+        id: 137,
+        name: "培根",
+        cooking_time: 120,
+        category: "meat",
+        description: "好吃"
+    },
+    {
+        id: 138,
+        name: "蟹肉棒",
+        cooking_time: 120,
+        category: "fish",
+        description: "好吃"
+    },
+    {
+        id: 139,
+        name: "鱼豆腐",
+        cooking_time: 120,
+        category: "beans",
+        description: "好吃"
+    },
+    {
+        id: 140,
+        name: "乌鸡卷",
+        cooking_time: 180,
+        category: "meat",
+        description: "好吃"
+    },
+    {
+        id: 141,
+        name: "鸡翅尖",
+        cooking_time: 300,
+        category: "meat",
+        description: "好吃"
+    },
+    {
+        id: 142,
+        name: "猪蹄",
+        cooking_time: 300,
+        category: "meat",
+        description: "好吃"
+    },
+    {
+        id: 143,
+        name: "蛋饺",
+        cooking_time: 300,
+        category: "meat",
+        description: "好吃"
+    },
+    {
+        id: 144,
+        name: "鸡翅中",
+        cooking_time: 480,
+        category: "meat",
+        description: "好吃"
+    },
+    {
+        id: 145,
+        name: "排骨",
+        cooking_time: 480,
+        category: "meat",
+        description: "好吃"
     }
 ];
