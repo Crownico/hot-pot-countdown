@@ -1,7 +1,7 @@
 <template>
     <div class="running-light-btn">
         <button class="light-btn" id="line">
-            <span class="light-btn-inner"><slot>button</slot></span>
+            <div class="light-btn-inner"><slot>button</slot></div>
         </button>
     </div>
 </template>
@@ -13,11 +13,12 @@
 
 $btn-bg-color: #ffffff;
 .light-btn {
-    --border-width: 2px;
+    --border-width: 1.5px;
     --border-radius: 8px;
     --background-spread: 50px;
 
     position: relative;
+    z-index: 0;
     padding: var(--border-width);
     overflow: hidden;
     font-family: Helvetica;
@@ -26,9 +27,12 @@ $btn-bg-color: #ffffff;
     color: #ffffff;
     letter-spacing: -0.02rem;
     cursor: pointer;
-    background-color: transparent;
+
+    /* background-color: transparent; */
+    background-color: #00f0ff;
     border: 0;
     border-radius: var(--border-radius);
+    outline: none;
     box-shadow:
         2.8px 2.8px 2.2px rgb(0 0 0 / 2%),
         6.7px 6.7px 5.3px rgb(0 0 0 / 2.8%);
@@ -63,8 +67,9 @@ $btn-bg-color: #ffffff;
     );
 }
 .light-btn > .light-btn-inner {
-    display: block;
-    padding: 2px 30px;
+    @include flex-center;
+
+    padding: 5px 30px;
     text-shadow: 0 4px 10px rgb(0 0 0 / 30%);
     background-color: $btn-bg-color;
     border-radius: calc(var(--border-radius) - var(--border-width) / 2);

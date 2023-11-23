@@ -2,7 +2,7 @@
     <div class="hotpot">
         <el-empty
             class="empty-description"
-            :image="dogjpg"
+            :image="dogpng"
             v-if="foodsStore.getSortedSelectedFoodsByTime.length === 0"
             description="点击下方按钮添加食材计时" />
         <CountdownBarList />
@@ -24,7 +24,7 @@ import { ref } from "vue";
 import { useFoodsStore } from "@/stores";
 import CountdownBarList from "./cpns/CountdownBarList.vue";
 import FoodsSelectedList from "./cpns/FoodsSelectedList.vue";
-import dogjpg from "@/assets/images/dog.jpg";
+import dogpng from "@/assets/images/dog.png";
 
 const openDrawer = ref(false);
 const foodsStore = useFoodsStore();
@@ -42,15 +42,14 @@ function handleDrawerClose() {
 
 $btn-bg-color: #f7f7f7;
 .hotpot {
+    background-color: #ffffff;
     .empty-description {
         position: absolute;
         top: 50%;
         left: 50%;
+        transition: all 0.5s;
         transform: translate(-50%, -60%);
-
-        /* transition: all 0.5s; */
-
-        /* animation: fade-out 1s ease;
+        animation: fade-out 1s ease;
 
         @keyframes fade-out {
             from {
@@ -59,7 +58,7 @@ $btn-bg-color: #f7f7f7;
             to {
                 opacity: 1;
             }
-        } */
+        }
     }
 }
 .btn-add-food {
@@ -89,11 +88,17 @@ $btn-bg-color: #f7f7f7;
         color: #7c7c7c;
         text-shadow: 0 4px 10px rgb(0 0 0 / 30%);
     }
-    &:hover {
+
+    /* &:hover {
         background-color: color.adjust($btn-bg-color, $lightness: 10%);
     }
     &:active {
         background-color: color.adjust($btn-bg-color, $lightness: -10%);
     }
+    &:focus {
+        width: 100px;
+        background-color: red;
+        outline: none;
+    } */
 }
 </style>
