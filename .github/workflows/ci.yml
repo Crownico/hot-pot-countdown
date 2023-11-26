@@ -2,7 +2,7 @@ name: CI GitHub Pages
 on:
     push:
         branches:
-            - main
+            - hotfix/cannot-find-elmessage
         paths-ignore:
             - README.md
 jobs:
