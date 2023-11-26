@@ -9,7 +9,8 @@ import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 // import vueJsx from "@vitejs/plugin-vue-jsx";
 // import { viteMockServe } from "vite-plugin-mock";
-console.log(path.resolve(process.cwd(), "./src/assets/icons"));
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
 export default defineConfig(({ command }) => {
     return {
         base: "./",
@@ -22,10 +23,13 @@ export default defineConfig(({ command }) => {
         plugins: [
             vue(),
             AutoImport({
-                resolvers: [ElementPlusResolver()]
+                resolvers: [ElementPlusResolver({ importStyle: "sass" })],
+                eslintrc: {
+                    enabled: true
+                }
             }),
             Components({
-                resolvers: [ElementPlusResolver()]
+                resolvers: [ElementPlusResolver({ importStyle: "sass" })]
             }),
             // // jsx、tsx语法支持
             // vueJsx(),
@@ -50,8 +54,10 @@ export default defineConfig(({ command }) => {
             preprocessorOptions: {
                 scss: {
                     javascriptEnabled: true,
-                    // 定义 sass 变量和使用 @mixin 混入，都需要预编译
-                    additionalData: `@use "@/styles/var.scss" as *; @use "@/styles/mixin.scss" as *; @use "@/styles/theme.scss" as *;`
+                    additionalData: `@use "@/styles/var.scss" as *; 
+                                    @use "@/styles/mixin.scss" as *;  
+                                    @use "@/styles/theme.scss" as *; 
+                                    @use "@/styles/element-plus.scss" as *; `
                 }
             }
         }

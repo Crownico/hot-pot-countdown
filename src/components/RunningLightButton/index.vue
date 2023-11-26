@@ -1,6 +1,6 @@
 <template>
     <div class="running-light-btn">
-        <button class="light-btn" id="line">
+        <button class="light-btn">
             <div class="light-btn-inner"><slot>button</slot></div>
         </button>
     </div>
@@ -24,11 +24,13 @@ $btn-bg-color: #ffffff;
     font-family: Helvetica;
     font-size: 1.3rem;
     font-weight: bold;
-    color: #ffffff;
+
+    /* color: #ffffff; */
     letter-spacing: -0.02rem;
     cursor: pointer;
 
     /* background-color: transparent; */
+
     background-color: #00f0ff;
     border: 0;
     border-radius: var(--border-radius);
@@ -78,6 +80,9 @@ $btn-bg-color: #ffffff;
     }
     &:active {
         background-color: color.adjust($btn-bg-color, $lightness: -10%);
+    }
+    html.dark & {
+        background-color: rgb(0 0 0);
     }
 }
 

@@ -1,34 +1,47 @@
-/** 组件库自定义样式，这里以 element-plus 为例 */
+// element-plus 将会使用 map.deep-merge 合并 scss 变量
 
-/* 克隆并自定义 ElMessage 样式，不会影响 ElMessage 原本样式，在 src/utils/message.ts 中调用自定义样式 ElMessage 方法即可，暗黑模式在 src/style/dark.scss 文件进行了适配 */
-.pure-message {
-    padding: 10px 13px !important;
-    background: #ffffff !important;
-    border-width: 0 !important;
-    box-shadow:
-        0 3px 6px -4px #0000001f,
-        0 6px 16px #00000014,
-        0 9px 28px 8px #0000000d !important;
-    &.el-message.is-closable .el-message__content {
-        padding-right: 17px !important;
-    }
-    & .el-message__content {
-        color: #000000d9 !important;
-        pointer-events: all !important;
-        background-image: initial !important;
-    }
-    & .el-message__icon {
-        margin-right: 8px !important;
-    }
-    & .el-message__closeBtn {
-        right: 9px !important;
-        border-radius: 4px;
-        outline: none;
-        transition:
-            background-color 0.2s,
-            color 0.2s;
-        &:hover {
-            background-color: rgb(0 0 0 / 6%);
-        }
-    }
-}
+// element-plus 使用 $colors 作为 map 来保存不同类型的颜色。
+// $notification 就是 notification 组件相关变量的映射。
+// 查看更多具体可覆盖的 scss 变量：https://github.com/element-plus/element-plus/blob/dev/packages/theme-chalk/src/common/var.scss
+
+// $colors: () !default;
+// $colors: map.deep-merge(
+//   (
+//     'white': #ffffff,
+//     'black': #000000,
+//     'primary': (
+//       'base': #409eff,
+//     )
+//     ...
+//   ),
+//   $colors
+// );
+// // Notification
+// // css3 var in packages/theme-chalk/src/notification.scss
+// $notification: () !default;
+// $notification: map.merge(
+//    (
+//     'width': 330px,
+//     'padding': 14px 26px 14px 13px,
+//     'radius': 8px,
+//     ...
+//    ),
+//    $notification
+// )
+
+/* 只需要重写你需要的即可 */
+@forward "element-plus/theme-chalk/src/common/var.scss" with (
+    // 颜色映射（对象）
+    $colors:
+        (
+            // "primary": (
+            //     "base": rgb(23, 16, 228)
+            // )
+        ),
+    // 组件映射
+    // $notification: ("width": 700px, "padding": 0, "radius": 0)
+);
+
+// 如果只是按需导入，则可以忽略以下内容。
+// 如果是全局导入 element-plus，则需要导入所有样式，再覆盖:
+// @use "element-plus/theme-chalk/src/index.scss" as *;

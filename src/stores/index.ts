@@ -40,6 +40,10 @@ export const useFoodsStore = defineStore({
         }
     },
     actions: {
+        // 食材是否已经存在数据库中，true 存在
+        isExist(food: Ingredient) {
+            return this.allfoods.findIndex(item => item.name === food.name) !== -1;
+        },
         // 添加食材，添加同名食材将会覆盖原数据
         addFood(food: Ingredient) {
             const index = this.allfoods.findIndex(item => item.name === food.name);
@@ -54,6 +58,7 @@ export const useFoodsStore = defineStore({
         // 应用用户导入的数据
         applyImportedFoods(importedFoods: Ingredient[]) {
             this.allfoods = importedFoods;
+            this.selectedFoods = [];
         }
     },
     persist: piniaPersistConfig("userFoodsDB", ["allfoods"])

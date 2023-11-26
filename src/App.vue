@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="hot-pot">
         <Header />
         <router-view v-slot="{ Component, route }">
             <!-- <Transition appear name="fade-transform" mode="out-in"> -->
@@ -11,10 +11,12 @@
 
 <script setup lang="ts">
 import Header from "@/layout/Header/index.vue";
-import { ElNotification } from "element-plus";
 import { getTimeState } from "./utils/time";
 import { h } from "vue";
 import catRose from "@/assets/images/cat-rose.jpg";
+import { useFollowSysTheme } from "@/hook/useFollowSysTheme";
+
+useFollowSysTheme();
 
 ElNotification({
     // title: getTimeState(),
@@ -31,6 +33,9 @@ ElNotification({
 </script>
 
 <style>
+#app {
+    background-color: var(--el-bg-color);
+}
 .hotpot-notification {
     width: fit-content;
 }

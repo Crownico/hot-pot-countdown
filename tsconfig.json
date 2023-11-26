@@ -28,6 +28,6 @@
         // 全局引入element-plus可指定全局组件类型
         // "types": ["element-plus/global"]
     },
-    "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "mock/*.ts"],
+    "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "mock/*.ts", "*.d.ts"],
     "references": [{ "path": "./tsconfig.node.json" }]
 }
