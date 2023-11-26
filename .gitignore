@@ -24,8 +24,8 @@ dist-ssr
 *.sw?
 
 # 自动导入
-auto-imports.d.ts
-components.d.ts
+# auto-imports.d.ts
+# components.d.ts
 
 # 构建包大小报告
 report.html
