@@ -4,7 +4,10 @@
             <div class="header--title">{{ ingredientCategory[props.category] }}：</div>
             <div class="header-btn">
                 <div class="btn-add-food" @click="emits('add-food', props.category)">
-                    <el-icon color="#999"><Plus /></el-icon>
+                    <!-- <el-icon color="#999">
+                        <Plus />
+                    </el-icon> -->
+                    <SvgIcon name="plus" />
                 </div>
             </div>
         </div>

@@ -14,7 +14,8 @@
             <el-icon class="btn-l" @click="handleClickOpenDrawer" :size="20"><Plus /></el-icon>
         </div> -->
         <RunningLightButton class="btn-add-food" @click="handleClickOpenDrawer">
-            <el-icon class="btn-icon" :size="20"><Plus /></el-icon>
+            <!-- <el-icon class="btn-icon" :size="20"><Plus /></el-icon> -->
+            <SvgIcon class="btn-icon" name="plus" />
         </RunningLightButton>
     </div>
 </template>
@@ -40,7 +41,7 @@ function handleDrawerClose() {
 <style scoped lang="scss">
 @use "sass:color";
 
-$btn-bg-color: #f7f7f7;
+$btn-bg-color: transparent;
 .hotpot-home {
     .empty-description {
         position: absolute;

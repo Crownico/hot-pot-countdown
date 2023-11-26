@@ -1,5 +1,4 @@
 import { RouteRecordRaw } from "vue-router";
-import { HOME_URL } from "@/config/config";
 
 /**
  * staticRouter(静态路由)
@@ -7,24 +6,20 @@ import { HOME_URL } from "@/config/config";
 export const staticRouter: RouteRecordRaw[] = [
     {
         path: "/",
-        redirect: HOME_URL
+        redirect: "/home"
     },
     {
-        path: HOME_URL,
+        path: "/home/index",
+        redirect: "/home"
+    },
+    {
+        path: "/home",
         name: "home",
         component: () => import("@/views/home/index.vue")
         // meta: {
         //     title: "首页"
         // }
     }
-    // {
-    //     path: "/layout",
-    //     name: "layout",
-    //     // component: () => import("@/layouts/index.vue"),
-    //     // component: () => import("@/layouts/indexAsync.vue"),
-    //     redirect: HOME_URL,
-    //     children: []
-    // }
 ];
 
 /**

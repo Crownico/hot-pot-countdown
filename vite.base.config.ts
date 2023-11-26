@@ -56,7 +56,6 @@ export default defineConfig(({ command }) => {
                     javascriptEnabled: true,
                     additionalData: `@use "@/styles/var.scss" as *; 
                                     @use "@/styles/mixin.scss" as *;  
-                                    @use "@/styles/theme.scss" as *; 
                                     @use "@/styles/element-plus.scss" as *; `
                 }
             }

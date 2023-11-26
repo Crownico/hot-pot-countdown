@@ -13,7 +13,7 @@
 
 $btn-bg-color: #ffffff;
 .light-btn {
-    --border-width: 1.5px;
+    --border-width: 1.6px;
     --border-radius: 8px;
     --background-spread: 50px;
 
@@ -71,7 +71,7 @@ $btn-bg-color: #ffffff;
 .light-btn > .light-btn-inner {
     @include flex-center;
 
-    padding: 5px 30px;
+    padding: 5px 26px;
     text-shadow: 0 4px 10px rgb(0 0 0 / 30%);
     background-color: $btn-bg-color;
     border-radius: calc(var(--border-radius) - var(--border-width) / 2);
