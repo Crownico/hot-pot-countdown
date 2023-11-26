@@ -18,7 +18,6 @@ import Dialog from "@/components/Dialog/index.vue";
 import { CategoryFoods, useFoodsStore } from "@/stores";
 import { h, ref } from "vue";
 import { message } from "@/utils/message";
-import { ElMessageBox } from "element-plus";
 import { useExcel } from "@/hook/useExcel";
 
 const props = defineProps<{
@@ -66,6 +65,7 @@ const { exportExcel, parseExcel } = useExcel();
 
 const handleBackupFoodDB = () => {
     exportExcel(foodsStore.allfoods, "火锅食材列表");
+    message("导出食材列表成功", { type: "success" });
 };
 
 const handleClickImportFoodDB = async () => {

@@ -1,5 +1,5 @@
 import { type VNode } from "vue";
-import { type MessageHandler, ElMessage } from "element-plus";
+import { type MessageHandler } from "element-plus";
 import { getType } from "@/utils/type";
 
 type messageStyle = "el" | "antd";

@@ -4,7 +4,10 @@
             <div class="header--title">{{ ingredientCategory[props.category] }}：</div>
             <div class="header-btn">
                 <div class="btn-add-food" @click="emits('add-food', props.category)">
-                    <el-icon color="#999"><Plus /></el-icon>
+                    <!-- <el-icon color="#999">
+                        <Plus />
+                    </el-icon> -->
+                    <SvgIcon name="plus" />
                 </div>
             </div>
         </div>
@@ -54,6 +57,11 @@ function selectedFood(food: Ingredient) {
         @include flex-center(space-between);
 
         padding: 10px 0;
+        color: var(--el-text-color-primary);
+
+        /* html.dark & {
+            color: #ffffff;
+        } */
 
         /* font-size: 18px; */
         .header--title {
@@ -78,22 +86,27 @@ function selectedFood(food: Ingredient) {
                 margin: 5px;
                 font-size: 14px;
                 line-height: 1;
-                color: #606266;
+
+                /* color: #606266; */
+                color: var(--el-text-color-regular);
                 text-align: center;
                 white-space: nowrap;
                 vertical-align: middle;
                 cursor: pointer;
                 user-select: none;
-                background-color: #ffffff;
-                border: 1px solid #dcdfe6;
+
+                /* background-color: #ffffff; */
+
+                /* border: 1px solid #dcdfe6; */
+                border: 1px solid var(--el-border-color);
                 border-radius: 20px;
                 outline: 0;
                 transition: 0.1s;
             }
             .content-item--selected {
-                color: #409eff;
-                background-color: #ecf5ff;
-                border-color: #c6e2ff;
+                color: var(--el-color-primary);
+                background-color: var(--el-color-primary-light-9);
+                border-color: var(--el-color-primary-light-5);
             }
         }
     }

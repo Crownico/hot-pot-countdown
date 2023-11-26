@@ -1,7 +1,7 @@
 import { defineConfig, loadEnv } from "vite";
 
-// import { visualizer } from "rollup-plugin-visualizer";
-// import viteCompression from "vite-plugin-compression";
+import { visualizer } from "rollup-plugin-visualizer";
+import viteCompression from "vite-plugin-compression";
 // import { cdn } from "./build/cdn";
 
 export default defineConfig(({ mode }) => {
@@ -30,24 +30,24 @@ export default defineConfig(({ mode }) => {
                     }
                 }
             }
-        }
-        // plugins: [
-        //     // cdn
-        //     env.VITE_CDN ? cdn : null,
-        //     // 是否生成包预览，分析依赖包大小做优化处理
-        //     env.VITE_REPORT && visualizer({ open: true, brotliSize: true, gzipSize: true, filename: "report.html" }),
-        //     // 是否 gizp 压缩
-        //     env.VITE_BUILD_COMPRESS &&
-        //         viteCompression({
-        //             // 生成的压缩包后缀
-        //             ext: ".gz",
-        //             // 体积大于threshold才会被压缩
-        //             threshold: 0,
-        //             // 默认压缩.js|mjs|json|css|html后缀文件，设置成true，压缩全部文件
-        //             filter: () => true,
-        //             // 压缩后是否删除原始文件
-        //             deleteOriginFile: false
-        //         })
-        // ]
+        },
+        plugins: [
+            // cdn
+            // env.VITE_CDN ? cdn : null,
+            // 是否生成包预览，分析依赖包大小做优化处理
+            env.VITE_REPORT && visualizer({ open: true, brotliSize: true, gzipSize: true, filename: "report.html" }),
+            // 是否 gizp 压缩
+            env.VITE_BUILD_COMPRESS &&
+                viteCompression({
+                    // 生成的压缩包后缀
+                    ext: ".gz",
+                    // 体积大于threshold才会被压缩
+                    threshold: 0,
+                    // 默认压缩.js|mjs|json|css|html后缀文件，设置成true，压缩全部文件
+                    filter: () => true,
+                    // 压缩后是否删除原始文件
+                    deleteOriginFile: false
+                })
+        ]
     };
 });

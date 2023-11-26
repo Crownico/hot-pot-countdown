@@ -72,20 +72,30 @@ function handleCountdownControl() {
 </script>
 
 <style scoped lang="scss">
+html.dark {
+    color: var(--el-text-color-secondary);
+}
+
 $border-radius: 10px;
 .hotpot-countdown-bar {
     position: relative;
     width: 90vw;
     margin: 20px auto;
     color: #3d3d3d;
+    border-radius: $border-radius;
+    html.dark & {
+        color: var(--el-text-color-secondary);
+        background-color: #262727;
+    }
     &:active {
-        background-color: #f5f5f5;
+        background-color: var(--el-fill-color);
     }
     &::before {
         position: absolute;
         z-index: 0;
         width: v-bind(curCountdownPercent);
         height: 100%;
+        color: #cfd3dc;
         content: "";
 
         /* background-color: rgb(111, 240, 143); */
@@ -128,6 +138,9 @@ $border-radius: 10px;
             text-shadow: 0 4px 10px rgb(0 0 0 / 30%);
             cursor: pointer;
             fill: #3d3d3d;
+            html.dark & {
+                fill: var(--el-text-color-secondary);
+            }
 
             /* 浏览器默认主题媒体查询 */
             @media (prefers-color-scheme: light) {
@@ -166,7 +179,7 @@ $border-radius: 10px;
     }
 }
 .countdown--overed {
-    color: #f5f5f5;
+    color: #f5f5f5 !important;
     .countdown-controller {
         fill: #f5f5f5 !important;
     }

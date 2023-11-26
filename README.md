@@ -11,8 +11,11 @@ vue3 + typescript + vite + element-plus
 1. 添加食材进行计时
 2. 添加或修改食材数据
 3. 重置食材数据
+4. 导入导出食材数据
+5. 跟随系统开启夜间模式
 
 ### 截图
+
 <p float="left">
     <img src="./doc/images/home.jpeg" width="200"  />
     <img src="./doc/images/select_food.jpeg" width="200" />
@@ -21,19 +24,19 @@ vue3 + typescript + vite + element-plus
 
 ### 安装与使用
 
-- **install：**
+-   **install：**
 
 ```bash
 pnpm install
 ```
 
-- **run：**
+-   **run：**
 
 ```bash
 pnpm dev
 ```
 
-- **docker deploy：**
+-   **docker deploy：**
 
 ```bash
 pnpm build
@@ -48,4 +51,3 @@ docker compose up -d
 ## 联系方式
 
 <img src="./doc/images/wechat.jpg" width="150"  />
-

@@ -8,7 +8,7 @@
             :model="formDataObject"
             style="max-width: 460px">
             <el-form-item label="食材名称：" prop="name">
-                <el-input v-model.trim="formDataObject.name" autofocus />
+                <el-input v-model.trim="formDataObject.name" autofocus placeholder="输入已存在的食材，则为编辑" />
             </el-form-item>
             <el-form-item label="倒计时间（秒）：" prop="cooking_time">
                 <el-input type="number" v-model="formDataObject.cooking_time" />
@@ -21,8 +21,8 @@
             </el-form-item>
             <el-form-item>
                 <div class="form-btns">
-                    <el-button type="primary" @click="onSubmit(formRef)">添加</el-button>
                     <el-button @click="emits('cancel')">取消</el-button>
+                    <el-button type="primary" @click="onSubmit(formRef)">添加</el-button>
                 </div>
             </el-form-item>
         </el-form>
@@ -77,8 +77,13 @@ const onSubmit = (formEl: FormInstance | undefined) => {
                 description: formDataObject.description,
                 category: props.categrory
             };
+            const _isExist = foodsStore.isExist(food);
             foodsStore.addFood(food);
-            message(`添加${formDataObject.name}成功`, { type: "success" });
+            if (_isExist) {
+                message(`编辑${formDataObject.name}成功`, { type: "success" });
+            } else {
+                message(`添加${formDataObject.name}成功`, { type: "success" });
+            }
         } else {
             message(`添加失败`, { type: "error" });
             return false;
