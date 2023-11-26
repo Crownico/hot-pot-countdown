@@ -46,6 +46,16 @@
     word-wrap: break-word;
 }
 
+/* fade */
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.28s;
+}
+.fade-enter,
+.fade-leave-active {
+    opacity: 0;
+}
+
 /* fade-transform */
 .fade-transform-leave-active,
 .fade-transform-enter-active {

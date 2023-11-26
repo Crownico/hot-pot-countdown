@@ -1,5 +1,5 @@
 <template>
-    <div class="hotpot">
+    <div class="hotpot-home">
         <el-empty
             class="empty-description"
             :image="dogpng"
@@ -41,8 +41,7 @@ function handleDrawerClose() {
 @use "sass:color";
 
 $btn-bg-color: #f7f7f7;
-.hotpot {
-    background-color: #ffffff;
+.hotpot-home {
     .empty-description {
         position: absolute;
         top: 50%;
@@ -72,7 +71,8 @@ $btn-bg-color: #f7f7f7;
     color: rgb(124 124 124);
     cursor: pointer;
     background-color: $btn-bg-color;
-    border: 1px solid #efefef;
+
+    /* border: 1px solid #efefef; */
     border-radius: 10px;
 
     /* box-shadow:

@@ -27,18 +27,24 @@
     width: 100vw;
     height: $nav-height;
 
-    @include use-theme {
+    /* color: var(--el-text-color-primary); */
+    color: #000000;
+    html.dark & {
+        color: #ffffff;
+    }
+
+    /* @include use-theme {
         color: get-theme-val(text-1);
         background-color: get-theme-val(bg);
-    }
+    } */
     .header-container {
         box-sizing: border-box;
         display: flex;
         width: 100%;
 
-        @include use-theme {
+        /* @include use-theme {
             border-bottom: 1px solid get-theme-val(divider-light);
-        }
+        } */
 
         @include respond-to(phone) {
             padding: 0 24px;

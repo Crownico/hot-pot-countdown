@@ -11,7 +11,8 @@ import "virtual:svg-icons-register";
 // element icons
 import * as ElementPlusIconsVue from "@element-plus/icons-vue";
 // element css
-import "element-plus/dist/index.css";
+import "element-plus/theme-chalk/dark/css-vars.css";
+
 import App from "./App.vue";
 import router from "./router";
 import pinia from "./stores";

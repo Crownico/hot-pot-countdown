@@ -52,8 +52,13 @@
 
 import { ref } from "vue";
 
+const themeMedia = window.matchMedia("(prefers-color-scheme: light)");
+
+// 以浏览器默认主题为网站主题
+const browserDefaultTheme = themeMedia.matches ? "light" : "dark";
+const curTheme = localStorage.getItem("theme") ?? browserDefaultTheme;
+
 const isLight = ref(true);
-const curTheme = localStorage.getItem("theme") ?? "light";
 isLight.value = curTheme === "light";
 
 document.documentElement.setAttribute("data-theme", curTheme);
@@ -87,9 +92,11 @@ function switchTheme() {
         flex-shrink: 0;
         width: 40px;
         height: 22px;
+        cursor: pointer;
         background-color: #f1f1f1;
         border: 1px solid rgb(60 60 60 / 29%);
         border-radius: 11px;
+        outline: none;
         transition:
             border-color 0.25s,
             background-color 0.25s;
